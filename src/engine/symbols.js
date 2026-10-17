@@ -1,0 +1,96 @@
+// Token & function tables shared by the editor, parser, evaluator and renderer.
+
+export const VAR_NAMES = ["A", "B", "C", "D", "E", "F", "X", "Y", "M"];
+
+// kind: value | var | postfix | infix | sep | close | prefix
+export const SYM = {
+  Ans: { kind: "value", label: "Ans" },
+  PreAns: { kind: "value", label: "PreAns" },
+  pi: { kind: "value", label: "π" },
+  e: { kind: "value", label: "e" },
+  i: { kind: "value", label: "i" },
+  Ran: { kind: "value", label: "Ran#" },
+  const: { kind: "value", label: "" }, // scientific constant, has .id
+  MatA: { kind: "value", label: "MatA" },
+  MatB: { kind: "value", label: "MatB" },
+  MatC: { kind: "value", label: "MatC" },
+  MatAns: { kind: "value", label: "MatAns" },
+  VctA: { kind: "value", label: "VctA" },
+  VctB: { kind: "value", label: "VctB" },
+  VctC: { kind: "value", label: "VctC" },
+  VctAns: { kind: "value", label: "VctAns" },
+  // statistics
+  n: { kind: "value", label: "n" },
+  xbar: { kind: "value", label: "x̄" },
+  sigx: { kind: "value", label: "σx" },
+  sx: { kind: "value", label: "sx" },
+  ybar: { kind: "value", label: "ȳ" },
+  sigy: { kind: "value", label: "σy" },
+  sy: { kind: "value", label: "sy" },
+  sumx: { kind: "value", label: "Σx" },
+  sumx2: { kind: "value", label: "Σx²" },
+  sumy: { kind: "value", label: "Σy" },
+  sumy2: { kind: "value", label: "Σy²" },
+  sumxy: { kind: "value", label: "Σxy" },
+  sumx3: { kind: "value", label: "Σx³" },
+  sumx2y: { kind: "value", label: "Σx²y" },
+  sumx4: { kind: "value", label: "Σx⁴" },
+  minX: { kind: "value", label: "minX" },
+  maxX: { kind: "value", label: "maxX" },
+  minY: { kind: "value", label: "minY" },
+  maxY: { kind: "value", label: "maxY" },
+  regA: { kind: "value", label: "A" },
+  regB: { kind: "value", label: "B" },
+  regC: { kind: "value", label: "C" },
+  regr: { kind: "value", label: "r" },
+  xhat: { kind: "postfix", label: "x̂" },
+  xhat1: { kind: "postfix", label: "x̂₁" },
+  xhat2: { kind: "postfix", label: "x̂₂" },
+  yhat: { kind: "postfix", label: "ŷ" },
+  toT: { kind: "postfix", label: "▶t" },
+  // postfix operators
+  sq: { kind: "postfix", label: "2", sup: true },
+  cube: { kind: "postfix", label: "3", sup: true },
+  inv: { kind: "postfix", label: "-1", sup: true },
+  fact: { kind: "postfix", label: "!" },
+  pct: { kind: "postfix", label: "%" },
+  dms: { kind: "postfix", label: "°" },
+  drgD: { kind: "postfix", label: "°" },
+  drgR: { kind: "postfix", label: "r" },
+  drgG: { kind: "postfix", label: "g" },
+  toPolar: { kind: "postfix", label: "▶r∠θ" },
+  toRect: { kind: "postfix", label: "▶a+bi" },
+  conv: { kind: "postfix", label: "" }, // unit conversion, has .id
+  // infix operators
+  nPr: { kind: "infix", label: "P" },
+  nCr: { kind: "infix", label: "C" },
+  angle: { kind: "infix", label: "∠" },
+  dot: { kind: "infix", label: "·" },
+  and: { kind: "infix", label: " and " },
+  or: { kind: "infix", label: " or " },
+  xor: { kind: "infix", label: " xor " },
+  xnor: { kind: "infix", label: " xnor " },
+  // separators
+  comma: { kind: "sep", label: "," },
+  colon: { kind: "sep", label: ":" },
+  eq: { kind: "sep", label: "=" },
+  close: { kind: "close", label: ")" },
+  // BASE-N literal prefixes
+  pd: { kind: "prefix", label: "d" },
+  ph: { kind: "prefix", label: "h" },
+  pb: { kind: "prefix", label: "b" },
+  po: { kind: "prefix", label: "o" },
+};
+for (const v of VAR_NAMES) SYM[v] = { kind: "var", label: v };
+
+export const FUNC_LABEL = {
+  sin: "sin(", cos: "cos(", tan: "tan(",
+  asin: "sin⁻¹(", acos: "cos⁻¹(", atan: "tan⁻¹(",
+  sinh: "sinh(", cosh: "cosh(", tanh: "tanh(",
+  asinh: "sinh⁻¹(", acosh: "cosh⁻¹(", atanh: "tanh⁻¹(",
+  log: "log(", ln: "ln(",
+  Pol: "Pol(", Rec: "Rec(", Rnd: "Rnd(", RanInt: "RanInt#(",
+  arg: "arg(", Conjg: "Conjg(", det: "det(", Trn: "Trn(",
+  Not: "Not(", Neg: "Neg(",
+  P: "P(", Q: "Q(", R: "R(",
+};
