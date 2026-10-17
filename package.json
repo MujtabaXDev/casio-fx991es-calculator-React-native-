@@ -1,6 +1,14 @@
 {
-  "name": "casio-calc",
+  "name": "scicalc-991",
+  "description": "A scientific calculator inspired by classic scientific calculators, built with React Native and Expo.",
   "version": "1.0.0",
+  "license": "Unlicense",
+  "keywords": [
+    "react-native",
+    "expo",
+    "calculator",
+    "scientific-calculator"
+  ],
   "main": "index.js",
   "dependencies": {
     "expo": "~57.0.27",
